@@ -1,0 +1,27 @@
+{
+  "name": "orgo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ObidovSamandar/e-commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ObidovSamandar/e-commerce/issues"
+  },
+  "homepage": "https://github.com/ObidovSamandar/e-commerce#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "express-session": "^1.17.1",
+    "joi": "^17.4.0"
+  }
+}

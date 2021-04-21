@@ -1,0 +1,58 @@
+<%- include('./parts/header') %>
+<%- include('./parts/navbar') %> 
+<!-- Start Page Banner -->
+<div class="page-banner-area item-bg4">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Register</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Start Register Area -->
+<section class="register-area ptb-100">
+    <div class="container">
+        <div class="register-form">
+            <h2>Register</h2>
+            <form  action="/register" method="POST" autocomplete="off">
+                <%- include('./parts/messages') %> 
+                <div class="form-group">
+                    <label>Username</label>
+                    <input name="username" type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="form-group">
+                    <label>Number</label>
+                    <input name="mobile_number" type="tel" class="form-control" placeholder="Phone number">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input name="password" type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
+                <button type="submit" class="default-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End Register Area -->
+<%- include('./parts/footer') %> 
