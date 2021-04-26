@@ -1,6 +1,6 @@
 jQuery(function ($) {
     'use strict';
-	
+		// Getting Product
         // Header Sticky
 		$(window).on('scroll',function() {
             if ($(this).scrollTop() > 120){  
@@ -30,7 +30,7 @@ jQuery(function ($) {
         });
         
         // Nice Select JS
-		$('select').niceSelect();
+		// $('select').niceSelect();
 		
 		// Home Slides
 		$('.home-slides').owlCarousel({
@@ -235,11 +235,11 @@ jQuery(function ($) {
 			}
 			$("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
 		}
-		// AJAX MailChimp
-		$(".newsletter-form").ajaxChimp({
-			url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
-			callback: callbackFunction
-		});
+		// // AJAX MailChimp
+		// $(".newsletter-form").ajaxChimp({
+		// 	url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
+		// 	callback: callbackFunction
+		// });
 
 		// Tooltips
         $(function () {
@@ -254,12 +254,12 @@ jQuery(function ($) {
             btnDown = spinner.find('.minus-btn'),
             min = input.attr('min'),
             max = input.attr('max');
-            
             btnUp.on('click', function() {
-                var oldValue = parseFloat(input.val());
+				var oldValue = parseFloat(input.val());
                 if (oldValue >= max) {
-                    var newVal = oldValue;
+					var newVal = oldValue;
                 } else {
+					console.log(min,max)
                     var newVal = oldValue + 1;
                 }
                 spinner.find("input").val(newVal);
@@ -351,7 +351,8 @@ jQuery(function ($) {
 		setInterval(function() { makeTimer(); }, 0);
 
 		// Preloader
-		jQuery(window).on('load', function () {
+		jQuery(window).on('load', async function () {
+			await cartLength()
 			$('.preloader').fadeOut()
 		})
         
@@ -367,5 +368,126 @@ jQuery(function ($) {
               wow.init();
             }
 		});
-		
+
+		let proname, newprice, oldprice, proimg,quantityInfo;
+		$('.quicksee').each((index,prop)=>{
+			prop.addEventListener('click',(e)=>{
+				proname=prop.dataset.proname
+				newprice=prop.dataset.newprice
+				oldprice=prop.dataset.oldprice
+				proimg=prop.dataset.proimg
+				
+				$('#modalProName').text(proname)
+				$('.modalNewPrice').text(`$${newprice}`)
+				if(oldprice!=0){
+					$('.modalOldPrice').text(`$${oldprice}`)
+				}
+				$('.products-image').css('background-image',`url(${proimg})`)
+			})
+		})
+		$('#addToCartBtn').on('click',async (e)=>{
+			quantityInfo=$('#proquantity').val()
+			await mainAddpros(proname,newprice,quantityInfo,proimg,'#messagePro')
+		})
+
+		$('.addToCartIconBtn').each((index,prop)=>{
+			prop.addEventListener('click',async (e)=>{
+				let result = $(prop.parentNode.parentNode.parentNode.parentNode).find($("img, a.proName,#pronewprice"))
+				let newproname = result[1].innerText
+				let newproprice =result[2].innerText.replace('$','')
+				let newproimg = result[0].getAttribute('src')
+				await mainAddpros(newproname,newproprice,1,newproimg,'#messagePro2')
+			})
+		})
+		$('.nextAddToCartBtn').each((index,prop)=>{
+			prop.addEventListener('click',async (e)=>{
+				let result = $(prop.parentNode.parentNode.parentNode.parentNode).find($(".product-details-image, .proName,#pronewprice,#quantityInfo"))
+				let newproname = result[1].innerText
+				let newproprice =result[2].innerText.replace('$','')
+				let newproimg = result[0].dataset.bgimg
+				let quantity = result[3].value
+				console.log(newproname,newproprice,newproimg,quantity)
+				await mainAddpros(newproname,newproprice,quantity,newproimg,'#messagePro3')
+			})
+		})
+		async function mainAddpros(proname,newprice,quantityInfo,proimg,classname) {
+			let response = await fetch('./shop/pro',{
+				method:"POST",
+				headers:{
+					"Content-Type":"application/json"
+				},
+				body:JSON.stringify({
+					proname:proname,
+					price:newprice,
+					quantity:quantityInfo,
+					backimg:proimg
+				})
+			})
+			if(response.ok){
+				$(classname).attr('class','alert alert-success')
+				$(classname).text('Added Successfully')
+				$(classname).css('opacity','1')
+				await cartLength()
+				setTimeout(() => {
+					$(classname).css('opacity','0')
+				},1000);
+			}else{
+				$(classname).attr('class','alert alert-danger')
+				$(classname).text('Cannot Add')
+				$(classname).css('opacity','1')
+				setTimeout(() => {
+					$(classname).css('opacity','0')
+				},1000)
+			}
+		}
+		// Carlength;
+		async function cartLength() {
+			let cartLength = await fetch('./dashboard/products',{
+				method:"GET"
+			})
+			cartLength = await cartLength.json()
+			let {length} = cartLength;
+			$('#cartItems').text(length)
+		}
+
+		$('#searchBox').on('keyup',(e)=>{
+			console.log(e.target.value)
+			if(e.target.value!=''){
+				$('.proName').each((index,val)=>{
+					if(val.innerText.toLowerCase()!=e.target.value.toLowerCase()){
+						val.parentNode.parentNode.parentNode.parentNode.style.display='none'
+					}else{
+						val.parentNode.parentNode.parentNode.parentNode.style.display='block'
+					}
+				})
+			}else{
+				$('.proName').each((index,val)=>{
+					val.parentNode.parentNode.parentNode.parentNode.style.display='block'
+				})
+			}
+		})
+
+
+		// Billing Forms
+		$('.radioButtons').click(function(){
+			if($("#paypal")[0].checked){
+			   $('.cardNumberInfo').css('display','block')
+			}else{
+				$('.cardNumberInfo').css('display','none')
+				$('#cvcode').val(null)
+				$('#cardnum').val(null)
+			}
+		});
+		// $("#categoryitems").on('click', async (e)=>{
+		// 		let getresult = await fetch('./shop/search?'+'productType='+e.target.value,{
+		// 			method:"POST",
+		// 		})
+		// 		getresult = await getresult.json()
+		// 		$(e.target).children("option:selected")[0].autofocus=true
+		// 		window.location.reload()
+		// })
 }(jQuery));
+// $('#paypal').on('change',(e)=>{
+// 	console.log(e.currentTarget.checked)
+// })
+

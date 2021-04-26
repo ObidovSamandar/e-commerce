@@ -1,6 +1,19 @@
 <% if(error_msg!=''){ %> 
     <div class="alert alert-danger"><%=error_msg %> </div>
 <% } %> 
+
 <% if(success_msg!=''){ %> 
-    <div class="alert alert-danger"><%=success_msg %> </div>
+    <div class="alert alert-success"><%=success_msg %> </div>
+<% } %> 
+
+<% if(paymenterr_msg!=''){ %>
+    <div  class="alert alert-danger"  style="position: fixed; top: 74px; z-index: 100; width: 50%; left: 50%; transform: translateX(-50%); opacity: 1;">
+        <%=paymenterr_msg %>
+    </div> 
+<% } %> 
+
+<% if(paymentsucc_msg!=''){ %>
+    <div class="alert alert-success"  style="position: fixed; top: 74px; z-index: 100; width: 50%; left: 50%; transform: translateX(-50%); opacity: 1;">
+        <%=paymentsucc_msg %>
+    </div> 
 <% } %> 

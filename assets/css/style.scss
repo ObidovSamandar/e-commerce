@@ -3498,7 +3498,7 @@ Page Banner CSS
 .page-banner-area {
     position: relative;
     z-index: 1;
-    background-image: url(../img/page-banner/page-banner-1.jpg);
+    background-image: url(/img/page-banner/page-banner-1.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3521,16 +3521,16 @@ Page Banner CSS
     }
 
     &.item-bg1 {
-        background-image: url(../img/page-banner/page-banner-2.jpg);
+        background-image: url(/img/page-banner/page-banner-2.jpg);
     }
     &.item-bg2 {
-        background-image: url(../img/page-banner/page-banner-3.jpg);
+        background-image: url(/img/page-banner/page-banner-3.jpg);
     }
     &.item-bg3 {
-        background-image: url(../img/page-banner/page-banner-4.jpg);
+        background-image: url(/img/page-banner/page-banner-2.jpg);
     }
     &.item-bg4 {
-        background-image: url(../img/page-banner/page-banner-5.jpg);
+        background-image: url(/img/page-banner/page-banner-3.jpg);
     }
 }
 .page-banner-content {
@@ -4892,6 +4892,16 @@ Cart Area CSS
                                     color: $optional-color;
                                 }
                             }
+                            button{
+                                outline: none;
+                                border: none;
+                                cursor: pointer;
+                                color: #d0d0d0;
+                                width: 50px;
+                                height: 100%;
+                                line-height: 43px;
+                                transition: .6s;
+                            }
                             input {
                                 height: 45px;
                                 color: $optional-color;
@@ -6169,6 +6179,7 @@ Footer Area CSS
 .footer-area {
     background-color: #f3f9fe;
 }
+
 .single-footer-widget {
     margin-bottom: 30px;
     .logo {

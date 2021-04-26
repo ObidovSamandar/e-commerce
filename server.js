@@ -33,8 +33,12 @@ app.use(flash())
 app.use((req,res,next)=>{
     res.locals.error_msg=req.flash('error_msg')
     res.locals.success_msg=req.flash('success_msg')
+    res.locals.paymentsucc_msg=req.flash('paymentsucc_msg')
+    res.locals.paymenterr_msg=req.flash('paymenterr_msg')
     next()
 })
+
+const Usermiddleware = require('./middlewares/Usermiddleware')
 
 // Router settings
 glob('**/*Route.js',{realpath:true} ,(err, files)=>{
@@ -43,6 +47,7 @@ glob('**/*Route.js',{realpath:true} ,(err, files)=>{
         app.use(RouterDetails.path, RouterDetails.router)
     })
 })
+app.use(Usermiddleware)
 
 
 

@@ -6,10 +6,11 @@
                 <div class="single-footer-widget">
                     <div class="logo">
                         <h2>
-                            <a href="/index">Orgo</a>
+                            <a href="/">Orgo</a>
                         </h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
                     <ul class="social">
                         <li>
                             <a href="#" class="facebook" target="_blank">
@@ -42,7 +43,7 @@
                     <ul class="instagram-list">
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram1.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn">
                                 </a>
@@ -51,7 +52,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram2.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -59,7 +60,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram3.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -67,7 +68,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram4.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -75,7 +76,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram5.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -83,7 +84,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram6.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -91,7 +92,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram7.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -99,7 +100,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram8.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -107,7 +108,7 @@
 
                         <li>
                             <div class="box">
-                                <img src="./img/instagram/instagram1.jpg" alt="image">
+                                <img src="/img/instagram/instagram1.jpg" alt="image">
                                 <i class="bx bxl-instagram"></i>
                                 <a href="#" target="_blank" class="link-btn"></a>
                             </div>
@@ -122,22 +123,23 @@
 
                     <ul class="quick-links">
                         <li>
-                            <a href="/about">About Us</a>
+                            <a href="/about" class="nav-link <%= activePath=='/about' ? 'active' :'' %>">About Us</a>
                         </li>
                         <li>
-                            <a href="/services">Our Services</a>
+                            <a href="/services" class="nav-link <%= activePath=='/services' ? 'active' :'' %>">Our
+                                Services</a>
                         </li>
                         <li>
-                            <a href="/shop-2">Shop</a>
+                            <a href="/shop" class="nav-link <%= activePath=='/shop' ? 'active' :'' %>">Shop</a>
                         </li>
                         <li>
-                            <a href="/blog-1">Blog</a>
+                            <a href="/blog-1" class="nav-link <%= activePath=='/blog-1' ? 'active' :'' %>">Blog</a>
                         </li>
                         <li>
-                            <a href="/faq">Faq</a>
+                            <a href="/faq" class="nav-link <%= activePath=='/faq' ? 'active' :'' %>">Faq</a>
                         </li>
                         <li>
-                            <a href="/contact">Contact</a>
+                            <a href="/contact" class="nav-link <%= activePath=='/contact' ? 'active' :'' %>">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -178,7 +180,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <p>
-                        <i class="far fa-copyright"></i> 
+                        <i class="far fa-copyright"></i>
                         Copyright @2020 Orgo. All Rights Reserved by
                         <a href="https://envytheme.com/" target="_blank">
                             EnvyTheme
@@ -208,33 +210,108 @@
 </div>
 <!-- End Go Top Area -->
 
+<!-- Start QuickView Modal Area -->
+<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="flaticon-cancel"></i></span>
+            </button>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="products-image"></div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-content">
+                            <div  id="messagePro"></div>
+                            <h3 id="modalProName"></h3>
+                            <div class="price">
+                                <span  class="modalNewPrice new-price"></span>
+                                <span class="modalOldPrice old-price"></span>
+                            </div>
+                            <div class="product-review">
+                                <div class="rating">
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                    <i class='bx bxs-star'></i>
+                                </div>
+                                <a href="#" class="rating-count">5 reviews</a>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et.</p>
+                            <div class="product-add-to-cart">
+                                <div class="input-counter">
+                                    <span class="minus-btn">
+                                        <i class='bx bx-minus'></i>
+                                    </span>
+                                    <input id="proquantity" name="quantity" min="0" type="text" value="1">
+                                    <span class="plus-btn">
+                                        <i class='bx bx-plus'></i>
+                                    </span>
+                                </div>
+                                <button id="addToCartBtn" type="submit" class="default-btn addToCart">
+                                    Add to cart
+                                </button>
+                            </div>
+    
+    
+                            <div class="products-share">
+                                <ul class="social">
+                                    <li><span>Share:</span></li>
+                                    <li>
+                                        <a href="#" class="facebook" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="twitter" target="_blank"><i class='bx bxl-twitter'></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="instagram" target="_blank"><i class='bx bxl-instagram'></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End QuickView Modal Area -->
+
 <!-- Jquery Slim JS -->
-<script src="./js/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 <!-- Popper JS -->
-<script src="./js/popper.min.js"></script>
+<script src="/js/popper.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="./js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <!-- Meanmenu JS -->
-<script src="./js/jquery.meanmenu.js"></script>
+<script src="/js/jquery.meanmenu.js"></script>
 <!-- Nice Select JS -->
-<script src="./js/jquery.nice-select.min.js"></script>
+<script src="/js/jquery.nice-select.min.js"></script>
 <!-- Owl Carousel JS -->
-<script src="./js/owl.carousel.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
 <!-- Magnific Popup JS -->
-<script src="./js/jquery.magnific-popup.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
 <!-- Odometer JS -->
-<script src="./js/odometer.min.js"></script>
+<script src="/js/odometer.min.js"></script>
 <!-- Jquery Appear JS -->
-<script src="./js/jquery.appear.min.js"></script>
+<script src="/js/jquery.appear.min.js"></script>
 <!-- Ajaxchimp JS -->
-<script src="./js/jquery.ajaxchimp.min.js"></script>
+<script src="/js/jquery.ajaxchimp.min.js"></script>
 <!-- Form Validator JS -->
-<script src="./js/form-validator.min.js"></script>
+<script src="/js/form-validator.min.js"></script>
 <!-- Contact JS -->
-<script src="./js/contact-form-script.js"></script>
+<script src="/js/contact-form-script.js"></script>
 <!-- Wow JS -->
-<script src="./js/wow.min.js"></script>
+<script src="/js/wow.min.js"></script>
 <!-- Custom JS -->
-<script src="./js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
+
 </html>

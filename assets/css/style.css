@@ -3876,7 +3876,7 @@ Page Banner CSS
 .page-banner-area {
   position: relative;
   z-index: 1;
-  background-image: url(../img/page-banner/page-banner-1.jpg);
+  background-image: url(/img/page-banner/page-banner-1.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3900,19 +3900,19 @@ Page Banner CSS
 }
 
 .page-banner-area.item-bg1 {
-  background-image: url(../img/page-banner/page-banner-2.jpg);
+  background-image: url(/img/page-banner/page-banner-2.jpg);
 }
 
 .page-banner-area.item-bg2 {
-  background-image: url(../img/page-banner/page-banner-3.jpg);
+  background-image: url(/img/page-banner/page-banner-3.jpg);
 }
 
 .page-banner-area.item-bg3 {
-  background-image: url(../img/page-banner/page-banner-4.jpg);
+  background-image: url(/img/page-banner/page-banner-2.jpg);
 }
 
 .page-banner-area.item-bg4 {
-  background-image: url(../img/page-banner/page-banner-5.jpg);
+  background-image: url(/img/page-banner/page-banner-3.jpg);
 }
 
 .page-banner-content {
@@ -5392,6 +5392,18 @@ Cart Area CSS
 
 .cart-table table tbody tr td.product-quantity .input-counter span:hover {
   color: #f99459;
+}
+
+.cart-table table tbody tr td.product-quantity .input-counter button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #d0d0d0;
+  width: 50px;
+  height: 100%;
+  line-height: 43px;
+  -webkit-transition: .6s;
+  transition: .6s;
 }
 
 .cart-table table tbody tr td.product-quantity .input-counter input {
